@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  background-color: #111c55;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  -webkit-box-shadow: 2px 2px 0px 1px #cccccc;
+          box-shadow: 2px 2px 0px 1px #cccccc;
+}
+
+button:hover {
+  background-color: #14257c;
+}
+
+.flex__center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.visible {
+  visibility: visible !important;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.end__screen {
+  position: fixed;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  background-color: rgba(17, 28, 85, 0.9);
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.end__screen h2 {
+  font-size: 5rem;
+}
+
+.end__screen h3 {
+  color: #cccccc;
+  margin-top: 30px;
+  font-size: 2rem;
+}
+
+.end__screen h2.win {
+  color: #04e204;
+}
+
+.end__screen h2.defeat {
+  color: #ff2929;
+}
+
+.end__screen button {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 1.2rem;
+}
+
+.phrase {
+  font-size: 3rem;
+  color: #ffffff;
+  letter-spacing: 20px;
+}
+
+.middle__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 100px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 100px;
+}
+
+.middle__wrapper .image {
+  position: relative;
+}
+
+.middle__wrapper .image svg {
+  position: absolute;
+  left: 0;
+}
+
+.middle__wrapper .image svg #drawing rect,
+.middle__wrapper .image svg #drawing path {
+  visibility: hidden;
+}
+
+.keyboard {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  gap: 20px;
+}
+
+.letter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+  width: 45px;
+  height: 45px;
+  font-weight: bold;
+  border: 1px solid #ffffff;
+}
+
+.letter.success {
+  border-color: #04e204;
+  color: #04e204;
+  -webkit-box-shadow: 2px 2px 0px 1px #04e204;
+          box-shadow: 2px 2px 0px 1px #04e204;
+}
+
+.letter.mistake {
+  border-color: #ff2929;
+  color: #ff2929;
+  -webkit-box-shadow: 2px 2px 0px 1px #ff2929;
+          box-shadow: 2px 2px 0px 1px #ff2929;
+}
+
+.footer {
+  margin-top: 50px;
+  padding: 20px;
+  color: #cccccc;
+}
+/*# sourceMappingURL=main.css.map */

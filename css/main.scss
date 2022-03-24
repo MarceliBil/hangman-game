@@ -1,0 +1,157 @@
+//COLORS
+$dark-primary: #111c55;
+$dark-secondary: #14257c;
+$light-primary: #cccccc;
+$white: #ffffff;
+$success: rgb(4, 226, 4);
+$mistake: rgb(255, 41, 41);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  background-color: $dark-primary;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: rgba($color: #000000, $alpha: 0);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.1s;
+  box-shadow: 2px 2px 0px 1px $light-primary;
+}
+
+button:hover {
+  background-color: $dark-secondary;
+}
+
+.flex__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.visible {
+  visibility: visible !important;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+//----------------------------
+
+.end__screen {
+  position: fixed;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  background-color: rgba($color: $dark-primary, $alpha: 0.9);
+  text-transform: uppercase;
+  z-index: 1;
+
+  h2 {
+    font-size: 5rem;
+  }
+
+  h3 {
+    color: $light-primary;
+    margin-top: 30px;
+    font-size: 2rem;
+  }
+
+  h2.win {
+    color: $success;
+  }
+  h2.defeat {
+    color: $mistake;
+  }
+
+  button {
+    color: $white;
+    border: 1px solid $white;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+.phrase {
+  font-size: 3rem;
+  color: $white;
+  letter-spacing: 20px;
+}
+
+.middle__wrapper {
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+
+  .image {
+    position: relative;
+
+    svg {
+      position: absolute;
+      left: 0;
+
+      #drawing {
+        rect,
+        path {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 20px;
+}
+
+.letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: $white;
+  width: 45px;
+  height: 45px;
+  font-weight: bold;
+  border: 1px solid $white;
+}
+
+.letter.success {
+  border-color: $success;
+  color: $success;
+  box-shadow: 2px 2px 0px 1px $success;
+}
+
+.letter.mistake {
+  border-color: $mistake;
+  color: $mistake;
+  box-shadow: 2px 2px 0px 1px $mistake;
+}
+
+//FOOTER{
+.footer {
+  margin-top: 50px;
+  padding: 20px;
+  color: $light-primary;
+}
