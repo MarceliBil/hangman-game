@@ -16,6 +16,7 @@ body {
   font-family: sans-serif;
   min-height: 100vh;
   background-color: $dark-primary;
+  padding: 20px;
 }
 
 img,
@@ -96,10 +97,12 @@ button:hover {
 }
 
 .middle__wrapper {
-  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  grid-template-columns: repeat(auto-fit, minmax(200px, 435px));
   gap: 100px;
-  justify-content: center;
-  align-items: center;
   margin-top: 100px;
 
   .image {
@@ -120,8 +123,10 @@ button:hover {
 }
 
 .keyboard {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  max-width: 435px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -154,4 +159,11 @@ button:hover {
   margin-top: 50px;
   padding: 20px;
   color: $light-primary;
+}
+
+@media screen and (max-width: 600px) {
+  .phrase {
+    max-width: 100%;
+    font-size: 2rem;
+  }
 }

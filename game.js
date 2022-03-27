@@ -1,5 +1,4 @@
-(function main() {
-
+(function () {
     //HANGMAN ELEMENTS
     const base = document.querySelector("#base"),
         pole = document.querySelector("#pole"),
@@ -18,13 +17,13 @@
         phraseToGuess = document.querySelector(".phrase__to__guess");
 
     //RENDER THE KEYBOARD
-    (function renderKeyboard() {
-        const ALPHABET = ['A', 'B', 'C', 'D', 'E', 'F', 'G',
+    (function () {
+        const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G',
             'H', 'I', 'J', 'K', 'L', 'M', 'N',
             'O', 'P', 'Q', 'R', 'S', 'T', 'U',
             'V', 'W', 'X', 'Y', 'Z'];
 
-        ALPHABET.forEach(i => {
+        alphabet.forEach(i => {
             let cell = document.createElement('button')
             cell.textContent = i
             cell.classList.add('letter')
@@ -38,30 +37,29 @@
         hideCharacters,
         mistakes = 0;
 
-    const setPhrase = (arg1) => {
-        phrase = arg1.join("").toUpperCase()
-        singleCharacters = phrase.split("");
-        hideCharacters = singleCharacters.map(i => i == " " ? " " : "_");
+    function setPhrase(apiPhrase) {
+        phrase = apiPhrase.join("").toUpperCase()
+        singleCharacters = phrase.split("")
+        hideCharacters = singleCharacters.map(i => i == " " ? " " : "_")
         document.querySelector(".phrase").textContent = hideCharacters.join("")
-        console.log(`A phrase to guess: ${phrase}`);
+        console.log(`A phrase to guess: ${phrase}`)
     }
 
-    let api = 'https://random-word-api.herokuapp.com/word?number=1';
+    const api = 'https://random-word-api.herokuapp.com/word?number=1';
 
-    (async function testMan() {
-        await fetch(api)
-            .then(res => res.json())
-            .then(data => {
-                setPhrase(data)
-            })
-            .catch((err) => {
-                setPhrase(['hello world'])
-                console.log(err);
-            })
+    (async function () {
+        const response = await fetch(api)
+        if (response.ok) {
+            const data = await response.json()
+            setPhrase(data)
+        }
+        else {
+            setPhrase(['hello world'])
+        }
     })()
 
     //GAME OVER
-    const gameOver = (score, msg) => {
+    function gameOver(score, msg) {
 
         document.querySelectorAll(".letter").forEach(i => i.disabled = 'true')
         gameResult.textContent = score;
@@ -76,7 +74,7 @@
     document.querySelector(".play__again").addEventListener("click", () => location.reload())
 
     //MAIN COURSE OF THE GANE 
-    const gameCourse = (letterTextContent, letterBtn) => {
+    function gameCourse(letterTextContent, letterBtn) {
 
         letterBtn.disabled = 'true'
 
@@ -129,11 +127,10 @@
                     break;
             }
         }
-        const WIN = !hideCharacters.includes("_")
-        if (WIN) gameOver("win", WIN)
+        const win = !hideCharacters.includes("_")
+        if (win) gameOver("win", win)
     }
     document.querySelectorAll(".letter").forEach(i => {
         return i.addEventListener('click', () => gameCourse(i.textContent, i))
     })
 })()
-
