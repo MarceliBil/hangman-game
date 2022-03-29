@@ -48,13 +48,14 @@
     const api = 'https://random-word-api.herokuapp.com/word?number=1';
 
     (async function () {
-        const response = await fetch(api)
-        if (response.ok) {
-            const data = await response.json()
-            setPhrase(data)
+        try {
+            const response = await fetch(api)
+            const responseJSON = await response.json()
+            setPhrase(responseJSON)
         }
-        else {
-            setPhrase(['hello world'])
+        catch (error) {
+            setPhrase(['hello world']);
+            console.log(error);
         }
     })()
 

@@ -17,6 +17,17 @@ svg {
   max-width: 100%;
 }
 
+a {
+  color: #ffffff;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #cccccc;
+}
+
 button {
   outline: none;
   border: none;

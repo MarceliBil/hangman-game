@@ -24,6 +24,15 @@ svg {
   max-width: 100%;
 }
 
+a {
+  color: $white;
+  transition: 0.1s;
+  text-decoration: none;
+}
+a:hover {
+  color: $light-primary;
+}
+
 button {
   outline: none;
   border: none;
