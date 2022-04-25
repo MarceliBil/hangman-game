@@ -66,6 +66,7 @@ button:hover {
 
 .end__screen {
   position: fixed;
+  top: 0;
   width: 100%;
   min-height: 100%;
   padding: 20px;
@@ -81,6 +82,7 @@ button:hover {
     color: $light-primary;
     margin-top: 30px;
     font-size: 2rem;
+    text-align: center;
   }
 
   h2.win {
